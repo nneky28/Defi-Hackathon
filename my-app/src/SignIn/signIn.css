@@ -1,0 +1,25 @@
+.Form--heading1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.Form--control2 {
+    padding-block: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Form--control2 label {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.Form--para2 {
+    padding: 46px 0 60px 0;
+    font-size: 14px;
+}
