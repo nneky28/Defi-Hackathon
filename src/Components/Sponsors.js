@@ -2,20 +2,15 @@ import React from 'react'
 import {
     Box,
     Text,
-    Center,
     HStack,
-    Flex,
-    Image,
-    Spacer,
-    Grid
-    
+    Image,  
   } from "@chakra-ui/react";
 
 export default function CrowdCard({img,name}) {
   return (
 
-<Box p={9}>
-  <HStack w={{base:'80%', md:'100%'}}>
+<Box p={{ base:3,md:9 }}>
+  <HStack w={{base:'30%', md:'100%'}}>
    <Image
   boxSize='50px'
   objectFit={'contain'}

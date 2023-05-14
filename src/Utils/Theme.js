@@ -27,6 +27,7 @@ const theme = extendTheme({
       orange300: '#FBBA7F',
       orange200: '#FCC38D',
       orange100: '#FEE8C9',
+      darkerOrange: "#F17105",
     },
     gray: {
       gray500: '#211f5c',
