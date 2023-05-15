@@ -21,3 +21,24 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Ignore .log files
+*.log
+
+
+# Ignore npm cache files
+npm-debug.log*
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore Chakra UI library
+/chakra-ui/
+
+# Ignore react-reveal library
+/react-reveal/
+
+# Ignore any other files or directories that may cause conflicts
+
+/node_modules/@chakra-ui/system/dist/
