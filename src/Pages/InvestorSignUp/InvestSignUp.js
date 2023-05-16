@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { Text, Image, HStack } from "@chakra-ui/react";
-import "./Form.css";
+import "../SignUp/Form.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export class Form1 extends Component {
+export class InvestSignUp extends Component {
   state = {
     fullName: "",
     email: "",
     password: "",
+    walletAddress: "",
     country: "",
     phone: "",
     data: [],
@@ -23,9 +24,17 @@ export class Form1 extends Component {
     });
   };
 
+  nextStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step + 1,
+    });
+  };
+
   continueFunc = (e) => {
     e.preventDefault();
-    const { fullName, email, password, country, phone } = this.state;
+    const { fullName, email, password, walletAddress, country, phone } =
+      this.state;
     if (!fullName || !email || !password || !country || !phone) {
       toast.error("Please fill all required fields");
     } else {
@@ -33,14 +42,16 @@ export class Form1 extends Component {
         "user",
         JSON.stringify([...this.state.data, this.state])
       );
-      this.props.nextStep();
+      this.nextStep();
+      window.location.href = "/SignIn";
     }
   };
 
   addData = (e) => {
     e.preventDefault();
 
-    const { fullName, email, password, country, phone } = this.state;
+    const { fullName, email, password, walletAddress, country, phone } =
+      this.state;
 
     if (fullName === "") {
       toast.error(" name field is required!", {
@@ -52,6 +63,10 @@ export class Form1 extends Component {
       });
     } else if (!email.includes("@")) {
       toast.error("plz enter valid email address", {
+        position: "top-center",
+      });
+    } else if (walletAddress === "") {
+      toast.error("wallet Address required is required", {
         position: "top-center",
       });
     } else if (password === "") {
@@ -97,24 +112,6 @@ export class Form1 extends Component {
             <div className="arrow">
               <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
             </div>
-            <h3
-              style={{
-                fontSize: "16px",
-                lineHeight: "22px",
-                fontWeight: "600",
-                marginBottom: "16px",
-              }}
-            >
-              Step 1 of 2
-            </h3>
-            <div className="Line--frame">
-              <div className="Line--right">
-                <hr className="hh--Style" />
-              </div>
-              <div className="Line--left">
-                <hr />
-              </div>
-            </div>
 
             <div className="Form--control">
               <label>Full Name</label>
@@ -153,18 +150,6 @@ export class Form1 extends Component {
             </div>
 
             <div className="Form--control">
-              <label>Wallet Address for cryptocurrency</label>
-              <input
-                className="Input"
-                name="walletAddress"
-                value={this.state.walletAddress}
-                onChange={this.getData}
-                type="text"
-                placeholder="&nbsp; eg Celo, cUSD, or ETH"
-              ></input>
-            </div>
-
-            <div className="Form--control">
               <h3 className="Password">Password must contain: </h3>
               <h3 className="Password--option">
                 <span className="Dot">•</span> At least 8 characters
@@ -178,6 +163,18 @@ export class Form1 extends Component {
               <h3 className="Password--option">
                 <span className="Dot">•</span> At least one uppercase letter
               </h3>
+            </div>
+
+            <div className="Form--control">
+              <label>Wallet Address for cryptocurrency</label>
+              <input
+                className="Input"
+                name="walletAddress"
+                value={this.state.walletAddress}
+                onChange={this.getData}
+                type="text"
+                placeholder="&nbsp; eg Celo, cUSD, or ETH"
+              ></input>
             </div>
 
             <div className="Two--in--one">
@@ -216,7 +213,7 @@ export class Form1 extends Component {
                 onClick={this.addData}
                 type="submit"
               >
-                Continue
+                Create an account
               </button>
               <ToastContainer />
             </div>
@@ -272,4 +269,4 @@ export class Form1 extends Component {
   }
 }
 
-export default Form1;
+export default InvestSignUp;

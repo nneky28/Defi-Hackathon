@@ -1,9 +1,9 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import "./Donate.css";
+import "./Project.css";
 import "../SignUp/Form.css";
 import { Text, Image, HStack } from "@chakra-ui/react";
 
-export const Donate = () => {
+export const Project = () => {
   return (
     <div className="Donate--Container">
       <nav className="NavBar">
