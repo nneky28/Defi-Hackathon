@@ -44,7 +44,7 @@ export default function Withdraw({ name, role, desc, img }) {
                     <Input type='default' placeholder='Enter the amount you want to withdraw' bg={'#E6DDF8'} color={'black'} _placeholder={{ color: 'black' }} h={14} />
 
                     <FormLabel fontSize={'20px'} mt={5}>Withdrawal method</FormLabel>
-                    <Select placeholder='Select country' bg={'#E6DDF8'} color='black' h={14} >
+                    <Select placeholder='Select country' bg={'#E6DDF8'} color='black' h={14} w={['55%', '50%', '100%']} >
                         <option style={{base:"20%" }}>transfer</option>
                         <option>Coupons</option>
                     </Select>
