@@ -31,7 +31,7 @@ export default function Footer() {
         </HStack>  
       </Box>
       <Center>
-      <SimpleGrid columns={{ base: 2 , md: 3 }} direction="row" spacing={{ base:'20px',md:'300px' }} >
+      <SimpleGrid columns={{ base: 2 , md: 3 }} direction="row" spacing={{ base:'20px',md:'380px' }} >
           <Box>
             <Heading  fontSize='24px' mb={4}>Product</Heading>
             <Text fontSize='14px' >Features</Text>
@@ -56,7 +56,7 @@ export default function Footer() {
         </SimpleGrid>
       </Center>
 
-<SimpleGrid direction="row"mt={10}  columns={{ base: 2 , md: 3 }} ms={{ base:"12%",md:"14%" }} spacing={{ base:'20px',md:'110px' }}>
+<SimpleGrid direction="row"mt={10}  columns={{ base: 2 , md: 3 }} ms={{ base:"12%",md:"12%" }} spacing={{ base:'20px',md:'195px' }}>
         <Text fontSize='12px'>&copy; 2023, All rights reserved. {today.getFullYear()}</Text>
         <HStack  >
               <FaFacebookF/>

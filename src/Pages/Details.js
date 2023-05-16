@@ -19,10 +19,11 @@ import NavBar from "../Layouts/NavBar";
 import Footer from '../Layouts/Footer';
 import TeamCard from "../Components/TeamCard";
 import CustomCard from "../Components/CustomCard"
+import ImageSlider from '../Components/Slider';
+import { Link } from "react-router-dom";
+
 
 export default function Details() {
-
-  
   const persons = [
     {
       img: "jessica.png",
@@ -70,17 +71,19 @@ export default function Details() {
       <NavBar />
       <Flex gap={{ base: 12, md: 20 }} ms={{ base: "24px", md: '90px' }}>
         <Heading fontSize={'36px'}>RoboWorks</Heading>
-        <Button bg={'#8054DE'}>Withdraw</Button>
+        <Link to={'/withdraw'}>
+          <Button bg={'#8054DE'}>Withdraw</Button>
+        </Link>
       </Flex>
-      <Box h={'auto'} w={'90%'} mt={8} ms={{ base: "24px", md: '90px' }} borderWidth='0.1px' borderRadius='lg' borderColor={'#F8F8FA'}>
-        <Image src='robot.png' objectFit={'contain '} />
+      <Box w={'90%'} mt={8} ms={{ base: "24px", md: '90px' }} borderRadius='lg' borderColor={'#F8F8FA'}>
+        <ImageSlider />
       </Box>
 
       <Box p={{ base: "10px", md: '30px' }} ms={{ base: "5px", md: '42px' }}>
-        <Tabs variant='unstyled' size={{ base:'sm',md:'lg' }}>
-          <TabList mb={5} 
-          color={'gray'}
-           gap={{ base:0,md:9 }} 
+        <Tabs variant='unstyled' size={{ base: 'sm', md: 'lg' }}>
+          <TabList mb={5}
+            color={'gray'}
+            gap={{ base: 0, md: 9 }}
             display="flex"
             justifyContent={{ base: 'space-between', md: 'flex-start' }}
             flexWrap={{ base: 'wrap', md: 'nowrap' }}>
@@ -105,7 +108,7 @@ export default function Details() {
                   <Box >
                     <Progress mb={"10px"} mt={"10px"} value={80} size='lg' borderRadius="11px" bg='#CFBFB2' color='#F17105'
                       colorScheme='orange'
-                      />
+                    />
                     <Text>65%  fundraising goal met </Text>
                   </Box>
                   <Flex justify={'space-between'} mt={"25px"}>
@@ -153,13 +156,13 @@ export default function Details() {
 
             <TabPanel>
               <CustomCard
-              img="award.png"
-              title={'As a tech start-up, RoboWorks can offer various rewards and incentives to its investors. Here are a few options:'}
-              list1={"Equity: One of the most common incentives for investors is equity in the company. By offering equity, investors become part owners of the company and can share in its success through dividends and capital gains."}
-              list2={'Early Access to Products: Investors can be given early access to RoboWorks products before they are available to the general public. This can be a valuable incentive, especially for investors who are interested in using the products themselves or have connections in industries where the products could be useful.'}
-              list3={'Discounts on Products or Services: Investors can be given discounts on RoboWorks products or services as a way of showing appreciation for their support. This can also help incentivize them to continue investing in the company.'}
-              list4={'Exclusive Events or Access: Investors can be given exclusive access to events or opportunities related to RoboWorks. This could include things like VIP tours of the company facilities or invitations to exclusive industry events where they can network and learn more about the latest trends and developments.'}
-              list5={'Recognition and Branding: Investors can be recognized and given branding opportunities to show their support for RoboWorks. This could include things like having their names listed on the company website or being featured in marketing materials.Ultimately, the rewards and incentives offered to investors will depend on the goals and needs of the company, as well as the interests and priorities of the investors themselves. Its important to find a balance that is mutually beneficial and helps build a strong relationship between the company and its investors.'}
+                img="award.png"
+                title={'As a tech start-up, RoboWorks can offer various rewards and incentives to its investors. Here are a few options:'}
+                list1={"Equity: One of the most common incentives for investors is equity in the company. By offering equity, investors become part owners of the company and can share in its success through dividends and capital gains."}
+                list2={'Early Access to Products: Investors can be given early access to RoboWorks products before they are available to the general public. This can be a valuable incentive, especially for investors who are interested in using the products themselves or have connections in industries where the products could be useful.'}
+                list3={'Discounts on Products or Services: Investors can be given discounts on RoboWorks products or services as a way of showing appreciation for their support. This can also help incentivize them to continue investing in the company.'}
+                list4={'Exclusive Events or Access: Investors can be given exclusive access to events or opportunities related to RoboWorks. This could include things like VIP tours of the company facilities or invitations to exclusive industry events where they can network and learn more about the latest trends and developments.'}
+                list5={'Recognition and Branding: Investors can be recognized and given branding opportunities to show their support for RoboWorks. This could include things like having their names listed on the company website or being featured in marketing materials.Ultimately, the rewards and incentives offered to investors will depend on the goals and needs of the company, as well as the interests and priorities of the investors themselves. Its important to find a balance that is mutually beneficial and helps build a strong relationship between the company and its investors.'}
               />
             </TabPanel>
 
@@ -169,28 +172,28 @@ export default function Details() {
             <TabPanel>
               <Text>Community</Text>
             </TabPanel>
-          
+
             <TabPanel>
               <CustomCard
-              img="update.png"
-              title={'The following are the updates investors should take note of:'}
-              list1={"Product Development: RoboWorks provide regular updates on the development of its robotic products, including any new features or capabilities that have been added."}
-              list2={'Sales and Revenue: RoboWorks provide updates on its sales and revenue growth, including any major customer wins or partnerships that have been secured. This can help investors understand the company\'s financial performance and growth potential.'}
-              list3={'Partnerships and Collaborations: RoboWorks provide updates on any partnerships or collaborations it has established with other companies or organizations. This will help investors understand the company\'s strategic positioning and potential for future growth.'}
-              list4={'Key Hires and Talent Acquisition: RoboWorks provide updates on any new key hires or talent acquisitions, including executives, engineers, or other key staff members. This will help investors understand the company\'s leadership and technical capabilities'}
-              list5={'Regulatory and Legal Developments: RoboWorks provide updates on any regulatory or legal developments that may impact the company\'s operations or growth potential. This will help investors understand the risks associated with investing in the company and how the company is managing these risks.'}
+                img="update.png"
+                title={'The following are the updates investors should take note of:'}
+                list1={"Product Development: RoboWorks provide regular updates on the development of its robotic products, including any new features or capabilities that have been added."}
+                list2={'Sales and Revenue: RoboWorks provide updates on its sales and revenue growth, including any major customer wins or partnerships that have been secured. This can help investors understand the company\'s financial performance and growth potential.'}
+                list3={'Partnerships and Collaborations: RoboWorks provide updates on any partnerships or collaborations it has established with other companies or organizations. This will help investors understand the company\'s strategic positioning and potential for future growth.'}
+                list4={'Key Hires and Talent Acquisition: RoboWorks provide updates on any new key hires or talent acquisitions, including executives, engineers, or other key staff members. This will help investors understand the company\'s leadership and technical capabilities'}
+                list5={'Regulatory and Legal Developments: RoboWorks provide updates on any regulatory or legal developments that may impact the company\'s operations or growth potential. This will help investors understand the risks associated with investing in the company and how the company is managing these risks.'}
               />
             </TabPanel>
-            
+
             <TabPanel>
               <CustomCard
-              img="secure.png"
-              title={'The following are the security measures put in place by Roboworks'}
-              list1={"Secure Data Storage: RoboWorks should ensure that sensitive investor information such as personal details, investment amounts, and transaction records are securely stored using encryption and access controls. This will help prevent data breaches and unauthorized access."}
-              list2={'Two-Factor Authentication: RoboWorks can require two-factor authentication for all investor accounts to ensure that only authorized users can access their accounts. This can involve a combination of passwords, security questions, and verification codes sent to mobile devices.'}
-              list3={'Regular Security Audits: RoboWorks can conduct regular security audits to identify and address potential vulnerabilities in their systems and processes. This will help ensure that the company is staying up to date with the latest security threats and taking appropriate measures to protect investor data. '}
-              list4={'Transparency: RoboWorks can be transparent with investors about the security measures they have in place, how they handle sensitive information, and what steps they are taking to address any security concerns..'}
-              list5={'Insurance: RoboWorks can obtain insurance to protect against losses due to cyber attacks or other security breaches. This can provide an added layer of protection for investors and help demonstrate the company\'s commitment to security.'}
+                img="secure.png"
+                title={'The following are the security measures put in place by Roboworks'}
+                list1={"Secure Data Storage: RoboWorks should ensure that sensitive investor information such as personal details, investment amounts, and transaction records are securely stored using encryption and access controls. This will help prevent data breaches and unauthorized access."}
+                list2={'Two-Factor Authentication: RoboWorks can require two-factor authentication for all investor accounts to ensure that only authorized users can access their accounts. This can involve a combination of passwords, security questions, and verification codes sent to mobile devices.'}
+                list3={'Regular Security Audits: RoboWorks can conduct regular security audits to identify and address potential vulnerabilities in their systems and processes. This will help ensure that the company is staying up to date with the latest security threats and taking appropriate measures to protect investor data. '}
+                list4={'Transparency: RoboWorks can be transparent with investors about the security measures they have in place, how they handle sensitive information, and what steps they are taking to address any security concerns..'}
+                list5={'Insurance: RoboWorks can obtain insurance to protect against losses due to cyber attacks or other security breaches. This can provide an added layer of protection for investors and help demonstrate the company\'s commitment to security.'}
               />
             </TabPanel>
           </TabPanels>
@@ -202,12 +205,3 @@ export default function Details() {
 
   )
 }
-
-
-
-//
-
-// 
-// 
-// 
-// 

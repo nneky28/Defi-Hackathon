@@ -8,7 +8,7 @@ import { Box,
 import React from 'react'
 
 
-export default function ProgressBar({list1,title,img,list2,list3,list4,list5}) {
+export default function Customcard({list1,title,img,list2,list3,list4,list5}) {
   return (
     <Box>
  <Flex justify={'space-between'} gap={5}>

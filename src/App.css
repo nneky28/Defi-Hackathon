@@ -1,0 +1,15 @@
+.indicator {
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 10px;
+    margin: 0 8px;
+    transition: background-color 0.3s ease-in-out;
+    width: 10px;
+  }
+  
+  .active {
+    background-color: white;
+  }
+  

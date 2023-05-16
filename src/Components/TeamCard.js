@@ -2,7 +2,7 @@ import { Box,Heading,Image, Text } from '@chakra-ui/react'
 import React from 'react'
 
 
-export default function ProgressBar({name,role,desc,img}) {
+export default function TeamCard({name,role,desc,img}) {
   return (
     <Box>
     <Image src={`${img}`}/>
