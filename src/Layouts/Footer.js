@@ -31,7 +31,7 @@ export default function Footer() {
         </HStack>  
       </Box>
       <Center>
-      <SimpleGrid columns={{ base: 2 , md: 3 }} direction="row" spacing={{ base:'20px',md:'200px' }} >
+      <SimpleGrid columns={{ base: 2 , md: 3 }} direction="row" spacing={{ base:'20px',md:'260px' }} >
           <Box>
             <Heading  fontSize='24px' mb={4}>Product</Heading>
             <Text fontSize='14px' >Features</Text>

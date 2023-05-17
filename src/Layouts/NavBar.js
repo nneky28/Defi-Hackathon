@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <Flex padding={"50px"} gap={5} display={["none", "flex"]} ms={'30px'}>
+    <Flex padding={"50px"} gap={5} display={["none", "flex"]} ms={'20px'}>
       <Link to="/">
 
         <HStack>
@@ -28,10 +28,10 @@ export default function NavBar() {
       <Link to="/">
         <Text p={2} fontSize="15px">Contact us</Text>
       </Link>
-      <Link to="/">
+      <Link to="/SignUp">
         <Text p={2} fontSize="15px">Sign Up</Text>
       </Link>
-      <Link to="/">
+      <Link to="/SignIn">
         <Text p={2} fontSize="15px">Sign In</Text>
       </Link>
       {/* <Spacer /> */}
