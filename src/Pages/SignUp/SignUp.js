@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Form1 from "./Form1";
 import Form2 from "./Form2";
-import InvestSignUp from "../InvestorSignUp/InvestSignUp";
 
 export class SignUp extends Component {
   state = {
@@ -82,16 +81,6 @@ export class SignUp extends Component {
       case 2:
         return (
           <Form2
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
-
-      case 2:
-        return (
-          <InvestSignUp
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
