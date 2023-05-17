@@ -67,10 +67,10 @@ export default function Details() {
 
   return (
 
-    <Box h="auto" bgGradient='linear(to top left, #191E31 50%,#8054DE 200%)' color='#fffff' overflow={'hidden'} w='auto'>
+    <Box h="auto" bgGradient='linear(to top left, #191E31 50%,#8054DE 200%)' color='#fffff' overflow={'hidden'} w='auto' >
       <NavBar />
       <Flex gap={{ base: 12, md: 20 }} ms={{ base: "24px", md: '90px' }}>
-        <Heading fontSize={'36px'}>RoboWorks</Heading>
+        <Heading fontSize={'36px'} color='white'>RoboWorks</Heading>
         <Link to={'/withdraw'}>
           <Button bg={'#8054DE'}>Withdraw</Button>
         </Link>
@@ -95,7 +95,7 @@ export default function Details() {
             <Tab _selected={{ color: '#FFFFFF', fontSize: 'bold' }}>Update</Tab>
             <Tab _selected={{ color: '#FFFFFF', fontSize: 'bold' }}>Security</Tab>
           </TabList>
-          <TabPanels>
+          <TabPanels color='white'>
             <TabPanel>
               <Flex justify={'space-between'} direction={["column", "row"]}>
                 <Box w={{ base: '100%', md: '40%' }}>

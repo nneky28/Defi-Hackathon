@@ -64,9 +64,9 @@ export default function Home() {
     <Box h="auto" bgGradient='linear(to top left, #191E31 50%,#8054DE 300%)' color='#fffff' overflow={'hidden'} w='auto'>
       <NavBar home/>
       <Header />
-      <Box mt={8}>
-        <Center mb={1}>
-          <Heading size={{ md: '2xl', base: '1xl' }}>Why Cryptocrowd</Heading>
+      <Box mt={8} color='white'>
+        <Center mb={1} >
+          <Heading size={{ md: '2xl', base: '1xl' }} color='white'>Why Cryptocrowd</Heading>
         </Center>
         <Center>
           <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
@@ -134,7 +134,7 @@ export default function Home() {
           </Center>
         </Flex>
       </Box>
-      <Box mt={10}>
+      <Box mt={10} color='white'>
         <Center mb={1}>
           <Heading size={{ md: '2xl', base: '1xl' }}>Funded Projects</Heading>
         </Center>
@@ -212,7 +212,7 @@ export default function Home() {
         </Flex>
       </Box>
 
-      <Box mt={10}>
+      <Box mt={10} color='white'>
         <Center mb={1}>
           <Heading size={{ md: '2xl', base: '1xl' }}>Testimonials</Heading>
         </Center>
@@ -260,7 +260,7 @@ export default function Home() {
           />
         </Flex>
       </Box>
-      <Box mt={10}>
+      <Box mt={10} color='white'>
         <Center mb={1}>
           <Heading size={{ md: '2xl', base: '1xl' }}>Ongoing Projects</Heading>
         </Center>
@@ -295,7 +295,7 @@ export default function Home() {
        </Link>
       </Box>
 
-      <Box mt={10}>
+      <Box mt={10} color='white'>
         <Center mb={1}>
           <Heading size={{ md: '2xl', base: '1xl' }}>Projects, Restrictions and Caveat</Heading>
         </Center>
@@ -313,7 +313,7 @@ export default function Home() {
       </Box>
 
 
-      <Box mt={10}>
+      <Box mt={10} color='white'>
         <Center mb={1}>
           <Heading size={{ md: '2xl', base: '1xl' }}>Cryptocurrency Token </Heading>
         </Center>
@@ -340,7 +340,7 @@ export default function Home() {
         </Center>
       </Box>
 
-      <Box mt={10}>
+      <Box mt={10} color='white'>
         <Center mb={1}>
           <Heading size={{ md: '2xl', base: '1xl' }}>Our Partners</Heading>
         </Center>

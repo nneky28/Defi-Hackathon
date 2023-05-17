@@ -9,16 +9,16 @@ export default function Header({ title, head }) {
     <Box padding={'30px'} ms={{ base: '0px', md: '50px' }} >
       <Flex w={'100%'} direction={["column", "row"]}>
         <Box w={{ base: '100%', md: '40%' }}>
-          <Heading mb={4} fontSize={"50px"}>Fund Your Tech <br /> Startups In Crypto
+          <Heading mb={4} fontSize={"50px"} color='white'>Fund Your Tech <br /> Startups In Crypto
           </Heading>
-          <Text fontSize={"20px"}>Find Backers who will bring your dream ideas into life.<br />
+          <Text fontSize={"20px"} color='white'>Find Backers who will bring your dream ideas into life.<br />
             Pitch, sell yourself, put your forward.  </Text>
           <Flex gap={5} display={["none", "flex"]} mt={8}>
             <Button bg="#8054DE" color={"white"} >Launch project</Button>
             <Button background="transparent" variant='outline' color={"white"} >Explore more</Button>
           </Flex>
 
-          <Flex gap={5} display={["none", "flex"]} mt={8}>
+          <Flex gap={5} display={["none", "flex"]} mt={8} color='white'>
             <Box>
               <Heading>100K+</Heading>
               <Text>Artwork</Text>
@@ -38,7 +38,7 @@ export default function Header({ title, head }) {
           </Flex>
 
           <Box mt={8}>
-            <Text >Top Investors</Text>
+            <Text color='white' >Top Investors</Text>
             <AvatarGroup size='md' max={6} mt={4}>
               <Avatar name='Ryan Florence' src='https://bit.ly/ryan-florence' />
               <Avatar name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
