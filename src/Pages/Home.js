@@ -6,138 +6,181 @@ import {
   Heading,
   Flex,
   Image,
-  SimpleGrid
+  SimpleGrid,
 } from "@chakra-ui/react";
 import NavBar from "../Layouts/NavBar";
 import Footer from "../Layouts/Footer";
 import Header from "../Components/Header";
 import CrowdCard from "../Components/CrowdCard";
 import FundedCard from "../Components/FundedCard";
-import Projects from "../Components/Projects"
-import Sponsor from '../Components/Sponsors'
+import Projects from "../Components/Projects";
+import Sponsor from "../Components/Sponsors";
 
 export default function Home() {
   const cards = Array.from({ length: 4 }, (v, i) => i);
 
   const team = [
     {
-      img: 'celo.png',
-      name: 'Celo',
-
+      img: "celo.png",
+      name: "Celo",
     },
 
     {
-      img: 'eth.png',
-      name: 'Ethereum',
-
+      img: "eth.png",
+      name: "Ethereum",
     },
 
     {
-      img: 'cardano.png',
-      name: 'Cardano',
-
+      img: "cardano.png",
+      name: "Cardano",
     },
-  ]
+  ];
 
   const partners = [
     {
-      img: 'celo.png',
-      name: 'Celo',
-
+      img: "celo.png",
+      name: "Celo",
     },
 
     {
-      img: 'web3.png',
-      name: 'Web3Ladies',
-
+      img: "web3.png",
+      name: "Web3Ladies",
     },
-
-
-  ]
+  ];
 
   return (
     <Box
-      w="100%" h="auto" bgGradient='linear(to top left, #191E31 50%,#8054DE 300%)' color='#fffff'
+      w="100%"
+      h="auto"
+      bgGradient="linear(to top left, #191E31 50%,#8054DE 300%)"
+      color="white"
     >
       <NavBar />
       <Header />
       <Box mt={8}>
         <Center mb={1}>
-          <Heading size={{ md: '2xl', base: '1xl' }}>Why Cryptocrowd</Heading>
+          <Heading size={{ md: "2xl", base: "1xl" }}>Why Cryptocrowd</Heading>
         </Center>
         <Center>
           <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
         </Center>
-        <Text marginTop={3} textAlign="center" fontSize={{ base: "12px", md: "18px" }}>
+        <Text
+          marginTop={3}
+          textAlign="center"
+          fontSize={{ base: "12px", md: "18px" }}
+        >
           We help you bring your projects and ideas to live
         </Text>
 
         <Flex
-        ms={'40px'}
+          ms={"40px"}
           direction={["column", "row"]}
           marginTop={2}
-          
           padding={{ base: "50px", md: "50px" }}
         >
-         <Center>
-         <Box w={{ base:'90%',md:'30%' }}>
+          <Center>
+            <Box w={{ base: "90%", md: "30%" }}>
+              <Box
+                as="button"
+                p={1}
+                height="24px"
+                color="white"
+                fontWeight="bold"
+                borderRadius="50px"
+                fontSize="12px"
+                bg={"#8054DE"}
+                bgGradient="linear(to-r, teal.500, green.500)"
+                _hover={{
+                  bgGradient: "linear(to-r, red.500, yellow.500)",
+                }}
+              >
+                why cryptocrowd
+              </Box>
+              <Box w={{ base: "100%", md: "60%" }}>
+                <Text>
+                  We make your tech startup dreams become a reality. Take action
+                  now to shape the future and make it a reality.
+                </Text>
+              </Box>
+            </Box>
+            <Box
+              w={{ base: "100%", md: "50%" }}
+              marginLeft={{ base: "0px", md: "12%" }}
+            >
+              <Box
+                w={{ base: "80%", md: "20%" }}
+                marginLeft={{ base: "0px", md: "12%" }}
+              >
+                <Box
+                  borderWidth="1px"
+                  borderColor={"#FFC798"}
+                  w={"35%"}
+                  marginTop={2}
+                  marginBottom={2}
+                />
+                <Text fontSize={"12px"}>Premium Security for you</Text>
+              </Box>
 
-<Box
-  as='button'
-  p={1}
-  height='24px'
-  color='white'
-  fontWeight='bold'
-  borderRadius='50px'
-  fontSize='12px'
-  bg={'#8054DE'}
-  bgGradient='linear(to-r, teal.500, green.500)'
-  _hover={{
-    bgGradient: 'linear(to-r, red.500, yellow.500)',
-  }}
->
-  why cryptocrowd
-</Box>
-<Box  w={{ base:'100%',md:'60%' }}>
-<Text>We make your tech startup dreams become a reality. Take action now to shape the future and make it a reality.</Text>
-</Box>
-</Box>
-<Box w={{ base:'100%',md:'50%' }} marginLeft={{ base:'0px',md:"12%" }}>
-<Box w={{ base: '80%', md: '20%' }} marginLeft={{ base: '0px', md: "12%" }}>
-  <Box borderWidth='1px' borderColor={'#FFC798'} w={'35%'} marginTop={2} marginBottom={2} />
-  <Text fontSize={'12px'}>Premium Security for you</Text>
-</Box>
+              <Box
+                w={{ base: "80%", md: "20%" }}
+                marginLeft={{ base: "0px", md: "12%" }}
+                mt={6}
+              >
+                <Box
+                  borderWidth="1px"
+                  borderColor={"#FFC798"}
+                  w={"35%"}
+                  marginTop={2}
+                  marginBottom={2}
+                />
+                <Text fontSize={"12px"}>Fund cutting-end</Text>
+              </Box>
 
-<Box w={{ base: '80%', md: '20%' }} marginLeft={{ base: '0px', md: "12%" }} mt={6} >
-  <Box borderWidth='1px' borderColor={'#FFC798'} w={'35%'} marginTop={2} marginBottom={2} />
-  <Text fontSize={'12px'}>Fund cutting-end</Text>
-</Box>
+              <Box
+                w={{ base: "80%", md: "20%" }}
+                marginLeft={{ base: "0px", md: "12%" }}
+                mt={6}
+              >
+                <Box
+                  borderWidth="1px"
+                  borderColor={"#FFC798"}
+                  w={"35%"}
+                  marginTop={2}
+                  marginBottom={2}
+                />
+                <Text fontSize={"12px"}>Fund and launch your start-up</Text>
+              </Box>
+            </Box>
 
-<Box w={{ base: '80%', md: '20%' }} marginLeft={{ base: '0px', md: "12%" }} mt={6} >
-  <Box borderWidth='1px' borderColor={'#FFC798'} w={'35%'} marginTop={2} marginBottom={2} />
-  <Text fontSize={'12px'}>Fund and launch
-    your start-up</Text>
-</Box>
-</Box>
-
-<Box w={{ base:'100%',md:'20%' }}>
-<Text fontSize={'12px'}>We host data on distributed network,and without the need for traditional financial intermediaries.’</Text>
-<Text fontSize={'12px'} mt={6}>We give you the chance to showcase your tech startup projects publicly to enable you
-  meet your goals.</Text>
-<Text fontSize={'12px'} mt={6}>We help tech startups to get funds that enable them to launch projects</Text>
-</Box>
-
-         </Center>
+            <Box w={{ base: "100%", md: "20%" }}>
+              <Text fontSize={"12px"}>
+                We host data on distributed network,and without the need for
+                traditional financial intermediaries.’
+              </Text>
+              <Text fontSize={"12px"} mt={6}>
+                We give you the chance to showcase your tech startup projects
+                publicly to enable you meet your goals.
+              </Text>
+              <Text fontSize={"12px"} mt={6}>
+                We help tech startups to get funds that enable them to launch
+                projects
+              </Text>
+            </Box>
+          </Center>
         </Flex>
       </Box>
       <Box mt={10}>
         <Center mb={1}>
-          <Heading size={{ md: '2xl', base: '1xl' }}>Funded Projects</Heading>
+          <Heading size={{ md: "2xl", base: "1xl" }}>Funded Projects</Heading>
         </Center>
         <Center>
           <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
         </Center>
-        <Text marginTop={3} textAlign="center" fontSize={{ base: "12px", md: "18px" }}>
+        <Text
+          marginTop={3}
+          textAlign="center"
+          fontSize={{ base: "12px", md: "18px" }}
+        >
           Successful projects that have been funded through the platform
         </Text>
 
@@ -149,7 +192,7 @@ export default function Home() {
           padding={{ base: "50px", md: "0px" }}
         >
           <FundedCard
-            icon={<Image src="hive.png" objectFit={'contain'} />}
+            icon={<Image src="hive.png" objectFit={"contain"} />}
             title="TechHive"
             Value="003"
             description="A start-up that creates cutting-edge software 
@@ -157,7 +200,7 @@ export default function Home() {
             funds
           />
           <FundedCard
-           icon={<Image src="security.png" objectFit={'contain'} />}
+            icon={<Image src="security.png" objectFit={"contain"} />}
             title="SecureWeb"
             Value="003"
             description="A start-up that creates cutting-edge software 
@@ -165,7 +208,7 @@ export default function Home() {
             funds
           />
           <FundedCard
-            icon={<Image src="brain.png" objectFit={'contain'} />}
+            icon={<Image src="brain.png" objectFit={"contain"} />}
             title="BrainWave"
             Value="003"
             description="A start-up that creates cutting-edge software 
@@ -182,7 +225,7 @@ export default function Home() {
           funds
         >
           <FundedCard
-            icon={<Image src="code.png" objectFit={'contain'} />}
+            icon={<Image src="code.png" objectFit={"contain"} />}
             title="CodeCraft "
             Value="003"
             description="A start-up that creates cutting-edge software 
@@ -190,7 +233,7 @@ export default function Home() {
             funds
           />
           <FundedCard
-            icon={<Image src="leap.png" objectFit={'contain'} />}
+            icon={<Image src="leap.png" objectFit={"contain"} />}
             title="Quantum Leap"
             Value="003"
             description="A start-up that creates cutting-edge software 
@@ -200,7 +243,7 @@ export default function Home() {
           <FundedCard
             title="CloudLap"
             Value="003"
-            icon={<Image src="cloud.png" objectFit={'contain'} />}
+            icon={<Image src="cloud.png" objectFit={"contain"} />}
             description="A start-up that creates cutting-edge software 
       for data analysis and automation."
             funds
@@ -210,12 +253,16 @@ export default function Home() {
 
       <Box mt={10}>
         <Center mb={1}>
-          <Heading size={{ md: '2xl', base: '1xl' }}>Testimonials</Heading>
+          <Heading size={{ md: "2xl", base: "1xl" }}>Testimonials</Heading>
         </Center>
         <Center>
           <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
         </Center>
-        <Text marginTop={3} textAlign="center" fontSize={{ base: "12px", md: "18px" }}>
+        <Text
+          marginTop={3}
+          textAlign="center"
+          fontSize={{ base: "12px", md: "18px" }}
+        >
           Hear from the horses mouth and be inspired
         </Text>
 
@@ -258,12 +305,16 @@ export default function Home() {
       </Box>
       <Box mt={10}>
         <Center mb={1}>
-          <Heading size={{ md: '2xl', base: '1xl' }}>Ongoing Projects</Heading>
+          <Heading size={{ md: "2xl", base: "1xl" }}>Ongoing Projects</Heading>
         </Center>
         <Center>
           <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
         </Center>
-        <Text marginTop={3} textAlign="center" fontSize={{ base: "12px", md: "18px" }}>
+        <Text
+          marginTop={3}
+          textAlign="center"
+          fontSize={{ base: "12px", md: "18px" }}
+        >
           List of ongoing projects to invest in
         </Text>
 
@@ -277,7 +328,7 @@ export default function Home() {
           <FundedCard
             title="RoboWorks"
             Value="003"
-            icon={<Image src="robot.png" objectFit={'contain'} />}
+            icon={<Image src="robot.png" objectFit={"contain"} />}
             description="A start-up that creates cutting-edge software 
       for data analysis and automation."
             ongoing
@@ -285,7 +336,7 @@ export default function Home() {
           <FundedCard
             title="BrainTrust"
             Value="003"
-            icon={<Image src="ai.png" objectFit={'contain'} />}
+            icon={<Image src="ai.png" objectFit={"contain"} />}
             description="A start-up that creates cutting-edge software 
       for data analysis and automation."
             ongoing
@@ -293,7 +344,7 @@ export default function Home() {
           <FundedCard
             title="DeepDives"
             Value="003"
-            icon={<Image src="wave.png" objectFit={'contain'} />}
+            icon={<Image src="wave.png" objectFit={"contain"} />}
             description="A start-up that creates cutting-edge software 
       for data analysis and automation."
             ongoing
@@ -310,7 +361,7 @@ export default function Home() {
           <FundedCard
             title="CloudBots"
             Value="003"
-            icon={<Image src="bot.png" objectFit={'contain'} />}
+            icon={<Image src="bot.png" objectFit={"contain"} />}
             description="A start-up that creates cutting-edge software 
       for data analysis and automation."
             ongoing
@@ -318,7 +369,7 @@ export default function Home() {
           <FundedCard
             title="MindMeld"
             Value="003"
-            icon={<Image src="mind.png" objectFit={'contain'} />}
+            icon={<Image src="mind.png" objectFit={"contain"} />}
             description="A start-up that creates cutting-edge software 
       for data analysis and automation."
             ongoing
@@ -326,7 +377,7 @@ export default function Home() {
           <FundedCard
             title="SignalFlow"
             Value="003"
-            icon={<Image src="signal.png" objectFit={'contain'} />}
+            icon={<Image src="signal.png" objectFit={"contain"} />}
             description="A start-up that creates cutting-edge software 
       for data analysis and automation."
             ongoing
@@ -336,115 +387,120 @@ export default function Home() {
 
       <Box mt={10}>
         <Center mb={1}>
-          <Heading size={{ md: '2xl', base: '1xl' }}>Projects, Restrictions and Caveat</Heading>
+          <Heading size={{ md: "2xl", base: "1xl" }}>
+            Projects, Restrictions and Caveat
+          </Heading>
         </Center>
         <Center>
           <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
         </Center>
-        <Text marginTop={3} textAlign="center" fontSize={{ base: "12px", md: "18px" }}>
+        <Text
+          marginTop={3}
+          textAlign="center"
+          fontSize={{ base: "12px", md: "18px" }}
+        >
           Find more information about projects, restrictions and caveat
         </Text>
 
         <Center>
           <Projects />
         </Center>
-
       </Box>
 
       <Box mt={10}>
         <Center mb={1}>
-          <Heading size={{ md: '2xl', base: '1xl' }}>Cryptocurrency Token </Heading>
+          <Heading size={{ md: "2xl", base: "1xl" }}>
+            Cryptocurrency Token{" "}
+          </Heading>
         </Center>
         <Center>
           <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
         </Center>
-        <Text marginTop={3} textAlign="center" fontSize={{ base: "12px", md: "18px" }}>
+        <Text
+          marginTop={3}
+          textAlign="center"
+          fontSize={{ base: "12px", md: "18px" }}
+        >
           Cryptocurrency tokens the platform accepts
         </Text>
 
-
         <Center mt={4}>
-          <SimpleGrid columns={[3, 3]} direction="row" spacing={12} >
-
-            {
-              team.map((item, key) => (
-                <Sponsor
-                  key={key}
-                  {...item}
-                />
-              ))
-            }
+          <SimpleGrid columns={[3, 3]} direction="row" spacing={12}>
+            {team.map((item, key) => (
+              <Sponsor key={key} {...item} />
+            ))}
           </SimpleGrid>
         </Center>
       </Box>
 
       <Box mt={10}>
         <Center mb={1}>
-          <Heading size={{ md: '2xl', base: '1xl' }}>Projects, Restrictions and Caveat</Heading>
+          <Heading size={{ md: "2xl", base: "1xl" }}>
+            Projects, Restrictions and Caveat
+          </Heading>
         </Center>
         <Center>
           <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
         </Center>
-        <Text marginTop={3} textAlign="center" fontSize={{ base: "12px", md: "18px" }}>
+        <Text
+          marginTop={3}
+          textAlign="center"
+          fontSize={{ base: "12px", md: "18px" }}
+        >
           Find more information about projects, restrictions and caveat
         </Text>
 
         <Center>
           <Projects />
         </Center>
-
       </Box>
 
       <Box mt={10}>
         <Center mb={1}>
-          <Heading size={{ md: '2xl', base: '1xl' }}>Cryptocurrency Token </Heading>
+          <Heading size={{ md: "2xl", base: "1xl" }}>
+            Cryptocurrency Token{" "}
+          </Heading>
         </Center>
         <Center>
           <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
         </Center>
-        <Text marginTop={3} textAlign="center" fontSize={{ base: "12px", md: "18px" }}>
+        <Text
+          marginTop={3}
+          textAlign="center"
+          fontSize={{ base: "12px", md: "18px" }}
+        >
           Cryptocurrency tokens the platform accepts
         </Text>
 
-
         <Center mt={4}>
-          <SimpleGrid columns={[3, 3]} direction="row" spacing={12} >
-
-            {
-              team.map((item, key) => (
-                <Sponsor
-                  key={key}
-                  {...item}
-                />
-              ))
-            }
+          <SimpleGrid columns={[3, 3]} direction="row" spacing={12}>
+            {team.map((item, key) => (
+              <Sponsor key={key} {...item} />
+            ))}
           </SimpleGrid>
         </Center>
       </Box>
 
       <Box mt={10}>
         <Center mb={1}>
-          <Heading size={{ md: '2xl', base: '1xl' }}>Our Partners</Heading>
+          <Heading size={{ md: "2xl", base: "1xl" }}>Our Partners</Heading>
         </Center>
         <Center>
           <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
         </Center>
-        <Text marginTop={3} textAlign="center" fontSize={{ base: "12px", md: "18px" }}>
+        <Text
+          marginTop={3}
+          textAlign="center"
+          fontSize={{ base: "12px", md: "18px" }}
+        >
           Meet our well renowned and regonised partners
         </Text>
 
-
         <Center mt={4}>
-          <SimpleGrid columns={[2, 2]} direction="row" spacing={12} >
-
-            {
-              partners.map((item, key) => (
-                <Sponsor
-                  key={key}
-                  {...item}
-                />
-              ))
-            }
+          <SimpleGrid columns={[2, 2]} direction="row" spacing={12}>
+            {partners.map((item, key) => (
+              <Sponsor key={key} {...item} />
+            ))}
           </SimpleGrid>
         </Center>
       </Box>
