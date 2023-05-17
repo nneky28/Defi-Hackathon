@@ -18,7 +18,12 @@ import Footer from "../../Layouts/Footer";
 
 export function CreateProject({ name, role, desc, img }) {
   return (
-    <div>
+    <Box
+      w="100%"
+      h="auto"
+      bgGradient="linear(to top left, #191E31 50%,#8054DE 300%)"
+      color="white"
+    >
       <div className="Donate--Container">
         <nav className="NavBar">
           <div className="crypto">
@@ -51,7 +56,10 @@ export function CreateProject({ name, role, desc, img }) {
         <Center pt={"100px"}>
           <Heading fontSize={"40px"}>PROJECT CREATION</Heading>
         </Center>
-        <Center p={"8px"}>
+        <Center>
+          <Image src="line.png" alt="line" w={{ base: "10%", md: "5%" }} />
+        </Center>
+        <Center p={"12px"}>
           <Text fontSize={"18px"}>
             Create a new project by filling out the form below
           </Text>
@@ -118,6 +126,6 @@ export function CreateProject({ name, role, desc, img }) {
         </Center>
         <Footer />
       </Box>
-    </div>
+    </Box>
   );
 }

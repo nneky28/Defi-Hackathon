@@ -6,11 +6,7 @@
     margin: 0;
 }
 
-.Donate--Container {
-    background-color: #302a58;
-    backdrop-filter: blur(350px);
-    color: #FFFFFF;
-}
+
 
 
 .NavBar {
@@ -27,12 +23,7 @@
     color: red;
 }
 
-.CreateProject--Container {
-    background-image: linear-gradient(to bottom, #5f43a7, #1b1f34);
-    backdrop-filter: blur(350px);
-    color: #FFFFFF;
-      
-}
+
 
 .CreateProject {
     padding-block: 50px;
