@@ -35,7 +35,14 @@ export class InvestSignUp extends Component {
     e.preventDefault();
     const { fullName, email, password, walletAddress, country, phone } =
       this.state;
-    if (!fullName || !email || !password || !country || !phone) {
+    if (
+      !fullName ||
+      !email ||
+      !walletAddress ||
+      !password ||
+      !country ||
+      !phone
+    ) {
       toast.error("Please fill all required fields");
     } else {
       localStorage.setItem(

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Form1 from "./Form1";
 import Form2 from "./Form2";
 
-
 export class SignUp extends Component {
   state = {
     step: 1,
@@ -88,8 +87,6 @@ export class SignUp extends Component {
             values={values}
           />
         );
-
-    
       default:
         return;
     }
