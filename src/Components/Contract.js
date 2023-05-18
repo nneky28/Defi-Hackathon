@@ -1,5 +1,5 @@
 export const token = {
-  addresss: "0xb8A19D6663ff0E04cC2273653097504595EC42d3",
+  address: "0xb8A19D6663ff0E04cC2273653097504595EC42d3",
   abi: [
     [
       {

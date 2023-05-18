@@ -9,6 +9,7 @@ import {
   ModalCloseButton,
   Button,
   Stack,
+  Select,
   Input,
   FormControl,
   FormLabel,
@@ -43,24 +44,33 @@ export default function DonateModal() {
         <ModalOverlay />
         <ModalContent>
           <Center>
-            <ModalHeader>Donate</ModalHeader>
+            <ModalHeader fontSize={"40px"}>Donate</ModalHeader>
           </Center>
           <ModalCloseButton />
           <ModalBody>
             <Center>
               <Stack spacing={4}>
-                <FormLabel fontSize={"20px"} mt={5}>
+                <FormLabel fontSize={"30px"} mt={5}>
                   Amount
                 </FormLabel>
                 <Input
                   type="default"
-                  placeholder="0.0"
+                  placeholder="Enter your contribution"
                   bg={"white"}
                   color={"black"}
                   _placeholder={{ color: "black" }}
                   h={14}
                   textAlign="left"
                 />
+                <Select
+                  placeholder="Celo"
+                  bg={"white"}
+                  color="black"
+                  h={14}
+                  w={["58%", "50%", "100%"]}
+                >
+                  <option>Eth</option>
+                </Select>
               </Stack>
             </Center>
             <Center>

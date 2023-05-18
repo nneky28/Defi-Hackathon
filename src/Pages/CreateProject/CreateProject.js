@@ -17,8 +17,21 @@ import "./CreateProject.css";
 import NavBar from "../../Layouts/NavBar";
 import Footer from "../../Layouts/Footer";
 import { useContractWrite } from "wagmi";
+import { token } from "../../Components/Contract";
 
 export function CreateProject({ name, role, desc, img }) {
+  function App() {
+    const { data, isLoading, isSuccess, write } = useContractWrite({
+      address: token.address,
+      abi: token.abi,
+      functionName: "campaigns",
+    });
+  }
+
+  const handleChange = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Box
       w="100%"
@@ -69,6 +82,17 @@ export function CreateProject({ name, role, desc, img }) {
 
         <Center>
           <FormControl w={{ base: "100%", md: "40%" }} p={10}>
+            <FormLabel fontSize={"20px"}>Owner of Project</FormLabel>
+            <Input
+              type="default"
+              placeholder="Project owner"
+              bg={"#E6DDF8"}
+              color={"black"}
+              _placeholder={{ color: "black" }}
+              id="owner"
+              h={14}
+            />
+
             <FormLabel fontSize={"20px"}>Project Title</FormLabel>
             <Input
               type="default"
@@ -116,6 +140,7 @@ export function CreateProject({ name, role, desc, img }) {
             />
           </FormControl>
         </Center>
+
         <Center pb="100">
           <Button
             w={{ base: "78%", md: "34%" }}
