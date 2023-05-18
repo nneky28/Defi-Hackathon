@@ -7,6 +7,13 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  Button,
+  Stack,
+  Input,
+  FormControl,
+  FormLabel,
+  Center,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 export default function DonateModal() {
@@ -25,23 +32,46 @@ export default function DonateModal() {
       {sizes.map((size) => (
         <Button
           onClick={() => handleSizeClick(size)}
-          key={size}
           m={4}
-        >{`Open ${size} Modal`}</Button>
+          style={{ backgroundColor: "rgb(128, 84, 222)", color: "white" }}
+        >
+          Donate
+        </Button>
       ))}
 
       <Modal onClose={onClose} size={size} isOpen={isOpen}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <Center>
+            <ModalHeader>Donate</ModalHeader>
+          </Center>
           <ModalCloseButton />
           <ModalBody>
-            <p>Hello world</p>
+            <Center>
+              <Stack spacing={4}>
+                <FormLabel fontSize={"20px"} mt={5}>
+                  Amount
+                </FormLabel>
+                <Input
+                  type="default"
+                  placeholder="0.0"
+                  bg={"white"}
+                  color={"black"}
+                  _placeholder={{ color: "black" }}
+                  h={14}
+                  textAlign="left"
+                />
+              </Stack>
+            </Center>
+            <Center>
+              <Button
+                style={{ backgroundColor: "rgb(128, 84, 222)", color: "white" }}
+                mt={"10px"}
+              >
+                Donate
+              </Button>
+            </Center>
           </ModalBody>
-          <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
-            <Button variant="ghost">Secondary Action</Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </>

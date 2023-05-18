@@ -14,6 +14,7 @@ import {
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import React from "react";
 import "./CreateProject.css";
+import NavBar from "../../Layouts/NavBar";
 import Footer from "../../Layouts/Footer";
 
 export function CreateProject({ name, role, desc, img }) {
@@ -24,7 +25,7 @@ export function CreateProject({ name, role, desc, img }) {
       bgGradient="linear(to top left, #191E31 50%,#8054DE 300%)"
       color="white"
     >
-      <div className="Donate--Container">
+      {/*<div className="Donate--Container">
         <nav className="NavBar">
           <div className="crypto">
             <HStack>
@@ -44,8 +45,8 @@ export function CreateProject({ name, role, desc, img }) {
             <ConnectButton className="wallet" chainStatus="name" />
           </div>
         </nav>
-      </div>
-
+      </div>*/}
+      <NavBar />
       <Box
         h="auto"
         bgGradient="linear(to top left, #191E31 50%,#8054DE 200%)"

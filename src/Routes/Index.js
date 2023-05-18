@@ -8,6 +8,7 @@ import Sample from "../Redux/Reducers/Sample";
 import InvestSignUp from "../Pages/InvestorSignUp/InvestSignUp";
 import { CreateProject } from "../Pages/CreateProject/CreateProject";
 import DonateModal from "../Pages/Donate/DonateModal";
+import { DonateThanks } from "../Pages/Donate/DonateThanks";
 
 export default function IndexRoutes() {
   return (
@@ -19,6 +20,7 @@ export default function IndexRoutes() {
         <Route path="/InvestSignUp" element={<InvestSignUp />} />
         <Route path="/CreateProject" element={<CreateProject />} />
         <Route path="/DonateModal" element={<DonateModal />} />
+        <Route path="/DonateThanks" element={<DonateThanks />} />
         <Route path="/page" element={<Page2 />} />
         <Route path="/sample" element={<Sample />} />
       </Routes>
