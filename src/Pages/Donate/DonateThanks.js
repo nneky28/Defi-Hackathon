@@ -17,15 +17,15 @@ export function DonateThanks() {
         <Center>
           <Heading>Thank you for supporting the community</Heading>
         </Center>
-        <Center>
+        <Center mb={100}>
           <Link to="/">
             <Button bg="#8054DE" color={"white"}>
               Go Home
             </Button>
           </Link>
         </Center>
-        <Center>
-          <Image src="thanks.png" alt="line" w={{ base: "10%", md: "60%" }} />
+        <Center mx={100}>
+          <Image src="thanks.png" alt="line" w={{ base: "100%", md: "60%" }} />
         </Center>
       </Box>
       <Footer />

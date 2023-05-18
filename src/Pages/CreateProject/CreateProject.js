@@ -16,6 +16,7 @@ import React from "react";
 import "./CreateProject.css";
 import NavBar from "../../Layouts/NavBar";
 import Footer from "../../Layouts/Footer";
+import { useContractWrite } from "wagmi";
 
 export function CreateProject({ name, role, desc, img }) {
   return (
