@@ -31,27 +31,20 @@ export default function Footer() {
         </HStack>  
       </Box>
       <Center>
-      <SimpleGrid columns={{ base: 2 , md: 3 }} direction="row" spacing={{ base:'20px',md:'200px' }} >
+      <SimpleGrid columns={{ base: 2 , md: 3 }} direction="row" spacing={{ base:'20px',md:'380px' }} >
           <Box>
             <Heading  fontSize='24px' mb={4}>Product</Heading>
             <Text fontSize='14px' >Features</Text>
             <Text fontSize='14px' mt={4}>Workload</Text>
             <Text fontSize='14px' mt={4}>Time</Text>
-             <Text fontSize='12px' mt={10}>&copy; 2023, All rights reserved. {today.getFullYear()}</Text>
+      
           </Box>
           <Box>
             <Heading fontSize='24px' mb={4}>Company</Heading>
             <Text fontSize='14px'>Real Work</Text>
             <Text fontSize='14px' mt={4}>About & Contact</Text>
             <Text fontSize='14px' mt={4}>Careers</Text>
-            <HStack  mt={10}>
-              <FaFacebookF/>
-              <FaInstagram/>
-              <FaLinkedinIn/>
-              <FaTelegram/>
-              <FaTwitter/>
-              <FaDiscord/>
-              </HStack>
+         
           </Box>
 
           <Box>
@@ -60,9 +53,20 @@ export default function Footer() {
             <Text fontSize='14px' mt={4}>Help & About</Text>
             <Text fontSize='14px' mt={4}>Customer </Text>
           </Box>
-
         </SimpleGrid>
       </Center>
+
+<SimpleGrid direction="row"mt={10}  columns={{ base: 2 , md: 3 }} ms={{ base:"12%",md:"12%" }} spacing={{ base:'20px',md:'195px' }}>
+        <Text fontSize='12px'>&copy; 2023, All rights reserved. {today.getFullYear()}</Text>
+        <HStack  >
+              <FaFacebookF/>
+              <FaInstagram/>
+              <FaLinkedinIn/>
+              <FaTelegram/>
+              <FaTwitter/>
+              <FaDiscord/>
+              </HStack>
+        </SimpleGrid>
 
     </Box>
   )

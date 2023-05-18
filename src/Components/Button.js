@@ -1,7 +1,7 @@
 import { Button as ButtonBox } from '@chakra-ui/button';
 import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { useHistory, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Button({
   children,
@@ -12,12 +12,14 @@ export default function Button({
   size = 'md',
   disabled = false,
   full = false,
-  background = 'orange.orange500',
+  background = '#553894',
   color = '#fff',
   border,
   leftIcon,
   rightIcon,
-  href
+  href,
+  colorScheme,
+  variant
 }) {
 
   const history = useNavigate();
@@ -30,10 +32,12 @@ export default function Button({
       color={color}
       bg={background}
       border={border}
+      colorScheme={colorScheme}
+       variant={variant}
       transition= "0.5s"
       _hover={{
-        bg: "background",
-        color: "black"
+        bg: "#553894",
+        color: "white"
       }}
       _active={{
         bg: background,
@@ -44,13 +48,13 @@ export default function Button({
       onClick={() => {
         link ? history(link) : onClick();
       }}
-      
+      borderRadius={5}
       isLoading={isLoading}
       loadingText="Please wait . . ."
       type={isSubmit ? 'submit' : 'button'}
       disabled={isLoading || disabled}
-      w={'100%'}
-      px="32px"
+      // w={'100%'}
+      px="15px"
       leftIcon={leftIcon}
       rightIcon={rightIcon}
     >

@@ -87,6 +87,7 @@ export class SignUp extends Component {
             values={values}
           />
         );
+
       default:
         return;
     }

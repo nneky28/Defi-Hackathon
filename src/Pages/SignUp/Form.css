@@ -7,7 +7,8 @@
 }
 
 .Form {
-    padding: 0rem 4rem 4rem 4rem;
+    padding: 0rem 3rem 3rem 3rem;
+    margin-top: '20px';
 }
 
 .Line--frame {
@@ -64,6 +65,7 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
+    /* margin-top: '20px'; */
 }
 
 .arrow {
