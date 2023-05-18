@@ -24,7 +24,7 @@ export default function Footer() {
       <Center>
         <Button bg="#8054DE" color={"white"} mt={8}>Contact Us</Button>
       </Center>
-      <Box overflow='hidden' p="50px"ms={{ base:-12,md:28 }} >
+      <Box overflow='hidden' p="50px"ms={{ base:-12,md:-22 }} >
         <HStack w={{ base: '80%', md: '100%' }}>
           <Image src='logo.png' alt='logo' boxSize={'50px'} />
           <Box><Text fontSize={13}>CryptoCrowd</Text></Box>
@@ -56,8 +56,8 @@ export default function Footer() {
         </SimpleGrid>
       </Center>
 
-<SimpleGrid direction="row"mt={10}  columns={{ base: 2 , md: 3 }} ms={{ base:"12%",md:"12%" }} spacing={{ base:'20px',md:'195px' }}>
-        <Text fontSize='12px'>&copy; 2023, All rights reserved. {today.getFullYear()}</Text>
+<SimpleGrid direction="row"mt={8}  columns={{ base: 2 , md: 3 }} ms={{ base:"12%",md:"3%" }} spacing={{ base:'20px',md:'280px' }}>
+        <Text fontSize='12px'>&copy; 2023, All rights reserved.{today.getFullYear()}</Text>
         <HStack  >
               <FaFacebookF/>
               <FaInstagram/>

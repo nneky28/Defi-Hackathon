@@ -29,7 +29,7 @@ export default function NavBar({ home }) {
 
   return (
     <>
-      <Flex padding={"40px"} gap={5} display={["none", "flex"]} ms={'40px'} color='white'>
+      <Flex padding={"40px"} gap={5} display={["none", "flex"]} ms={'5px'} color='white'>
         <Link to="/">
           <HStack>
             <Image src='logo.png' alt='logo' boxSize={'38px'} />
@@ -41,14 +41,8 @@ export default function NavBar({ home }) {
         </Link>
         <Link to="/">
           {" "}
-          {/* <Text fontSize="15px" p={2}>Discover</Text> */}
         </Link>
-        {/* <Link to="/"> */}
         <Text p={2} fontSize="15px">Expore</Text>
-        {/* </Link> */}
-        {/* <Link to="/">
-          {/* <Text p={2} fontSize="15px">Contact us</Text> */}
-        {/* </Link> */}
         {
           home &&
           <>

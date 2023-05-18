@@ -76,7 +76,7 @@ export default function Home() {
         </Text>
 
         <Flex
-          ms={{ base: '10px', md: '40px' }}
+          ms={{ base: '10px', md: '10px' }}
           direction={["column", "row"]}
           marginTop={2}
 

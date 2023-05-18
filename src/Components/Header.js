@@ -6,7 +6,7 @@ export default function Header({ title, head }) {
 
 
   return (
-    <Box padding={'30px'} ms={{ base: '0px', md: '50px' }} >
+    <Box padding={'30px'} ms={{ base: '0px', md: '15px' }} >
       <Flex w={'100%'} direction={["column", "row"]}>
         <Box w={{ base: '100%', md: '40%' }}>
           <Heading mb={4} fontSize={"50px"} color='white'>Fund Your Tech <br /> Startups In Crypto
