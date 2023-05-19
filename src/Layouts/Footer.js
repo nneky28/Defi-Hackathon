@@ -4,6 +4,7 @@ import { FaFacebookF,FaInstagram,FaLinkedinIn,FaTelegram,FaTwitter,FaDiscord } f
 
 export default function Footer() {
   const today = new Date()
+  const emailAddress = 'cryptocrowdhack@gmail.com';
   return (
     <Box bg='#433478'
       p={10}
@@ -22,16 +23,20 @@ export default function Footer() {
         </Box>
       </Center>
       <Center>
-        <Button bg="#8054DE" color={"white"} mt={8}>Contact Us</Button>
+      <a href={`mailto:${emailAddress}`}>
+      <Button bg="#8054DE" color="white" mt={8}>
+        Contact Us
+      </Button>
+    </a>
       </Center>
-      <Box overflow='hidden' p="50px"ms={{ base:-12,md:-22 }} >
+      <Box overflow='hidden' p="50px"ms={{ base:-12,md:-1 }} >
         <HStack w={{ base: '80%', md: '100%' }}>
           <Image src='logo.png' alt='logo' boxSize={'50px'} />
           <Box><Text fontSize={13}>CryptoCrowd</Text></Box>
         </HStack>  
       </Box>
       <Center>
-      <SimpleGrid columns={{ base: 2 , md: 3 }} direction="row" spacing={{ base:'20px',md:'380px' }} >
+      <SimpleGrid columns={{ base: 2 , md: 3 }} direction="row" spacing={{ base:'20px',md:'420px' }} >
           <Box>
             <Heading  fontSize='24px' mb={4}>Product</Heading>
             <Text fontSize='14px' >Features</Text>
@@ -56,15 +61,35 @@ export default function Footer() {
         </SimpleGrid>
       </Center>
 
-<SimpleGrid direction="row"mt={8}  columns={{ base: 2 , md: 3 }} ms={{ base:"12%",md:"3%" }} spacing={{ base:'20px',md:'280px' }}>
+<SimpleGrid direction="row"mt={8}  columns={{ base: 2 , md: 3 }} ms={{ base:"12%",md:"4.5%" }} spacing={{ base:'20px',md:'330px' }}>
         <Text fontSize='12px'>&copy; 2023, All rights reserved.{today.getFullYear()}</Text>
         <HStack  >
-              <FaFacebookF/>
+              {/* <FaFacebookF/>
               <FaInstagram/>
               <FaLinkedinIn/>
               <FaTelegram/>
               <FaTwitter/>
-              <FaDiscord/>
+              <FaDiscord/> */}
+
+<a href="https://twitter.com/crypto_crowdt?s=21&t=Kfg7kTd3BkEJOA-Rfk5qig">
+        <FaFacebookF />
+      </a>
+      <a href="https://twitter.com/crypto_crowdt?s=21&t=Kfg7kTd3BkEJOA-Rfk5qig">
+        <FaInstagram />
+      </a>
+      <a href="https://linkedin.com">
+        <FaLinkedinIn />
+      </a>
+      <a href="https://telegram.org">
+        <FaTelegram />
+      </a>
+      <a href="https://twitter.com/crypto_crowdt?s=21&t=Kfg7kTd3BkEJOA-Rfk5qig">
+        <FaTwitter />
+      </a>
+      <a href="https://discord.com">
+        <FaDiscord />
+      </a>
+
               </HStack>
         </SimpleGrid>
 

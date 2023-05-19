@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import {
   Box,
   Center,
@@ -17,10 +17,12 @@ import Projects from "../Components/Projects";
 import Sponsor from "../Components/Sponsors";
 import projects from "../Utils/Dummydata";
 import { Link } from 'react-router-dom';
+import { UserContext } from "../Routes/UserContext";
 
 export default function Home() {
   // const cards = Array.from({ length: 4 }, (v, i) => i);
   const [data] = useState(projects)
+ 
  
   const team = [
     {
@@ -51,6 +53,8 @@ export default function Home() {
     },
   ];
 
+
+
   return (
     <Box
       w="100%"
@@ -58,7 +62,8 @@ export default function Home() {
       bgGradient="linear(to top left, #191E31 50%,#8054DE 300%)"
       color="white"
     >
-      <NavBar  home/>
+     <NavBar
+     home />
       <Header />
       <Box mt={8}>
         <Center mb={1}>
@@ -76,10 +81,10 @@ export default function Home() {
         </Text>
 
         <Flex
-          ms={"40px"}
+          ms={"10px"}
           direction={["column", "row"]}
           marginTop={2}
-          padding={{ base: "50px", md: "50px" }}
+          padding={{ base: "50px", md: "40px" }}
         >
           <Center>
             <Box w={{ base: "90%", md: "30%" }}>
@@ -337,6 +342,7 @@ export default function Home() {
             description="A start-up that creates cutting-edge software 
       for data analysis and automation."
             ongoing
+            
           />
           <FundedCard
             title="BrainTrust"
@@ -391,56 +397,7 @@ export default function Home() {
        </Link>
       </Box>
 
-      <Box mt={10} color='white'>
-        <Center mb={1}>
-          <Heading size={{ md: "2xl", base: "1xl" }}>
-            Projects, Restrictions and Caveat
-          </Heading>
-        </Center>
-        <Center>
-          <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
-        </Center>
-        <Text
-          marginTop={3}
-          textAlign="center"
-          fontSize={{ base: "12px", md: "18px" }}
-        >
-          Find more information about projects, restrictions and caveat
-        </Text>
-
-        <Center>
-          <Projects />
-        </Center>
-      </Box>
-
-
-      <Box mt={10} color='white'>
-        <Center mb={1}>
-          <Heading size={{ md: "2xl", base: "1xl" }}>
-            Cryptocurrency Token{" "}
-          </Heading>
-        </Center>
-        <Center>
-          <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
-        </Center>
-        <Text
-          marginTop={3}
-          textAlign="center"
-          fontSize={{ base: "12px", md: "18px" }}
-        >
-          Cryptocurrency tokens the platform accepts
-        </Text>
-
-        <Center mt={4}>
-          <SimpleGrid columns={[3, 3]} direction="row" spacing={12}>
-            {team.map((item, key) => (
-              <Sponsor key={key} {...item} />
-            ))}
-          </SimpleGrid>
-        </Center>
-      </Box>
-
-      <Box mt={10}>
+      <Box mt={10} color='white'id='discover' >
         <Center mb={1}>
           <Heading size={{ md: "2xl", base: "1xl" }}>
             Projects, Restrictions and Caveat

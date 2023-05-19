@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {
   Box,
   Text,
@@ -13,6 +13,17 @@ import {
   TabPanel,
   Progress,
   SimpleGrid,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  Input,
+  Stack,
+  FormLabel,
+  Center,
 
 } from "@chakra-ui/react";
 import NavBar from "../Layouts/NavBar";
@@ -21,9 +32,23 @@ import TeamCard from "../Components/TeamCard";
 import CustomCard from "../Components/CustomCard"
 import ImageSlider from '../Components/Slider';
 import { Link } from "react-router-dom";
+import { UserContext } from '../Routes/UserContext';
 
 
 export default function Details() {
+  const { userType,updateUserType } = useContext(UserContext);
+  console.log("User",userType)
+
+  const [size, setSize] = React.useState("md");
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleSizeClick = (newSize) => {
+    setSize(newSize);
+    onOpen();
+  };
+
+  const sizes = ["xl"];
+
   const persons = [
     {
       img: "jessica.png",
@@ -65,25 +90,37 @@ export default function Details() {
   ]
 
 
+
   return (
 
     <Box h="auto" bgGradient='linear(to top left, #191E31 50%,#8054DE 200%)' color='#fffff' overflow={'hidden'} w='auto' >
       <NavBar />
-      <Flex gap={{ base: 12, md: 20 }} ms={{ base: "24px", md: '90px' }}>
+      <Flex gap={{ base: 12, md: 20 }} ms={{ base: "24px", md: '50px' }}>
         <Heading fontSize={'36px'} color='white'>RoboWorks</Heading>
-        <Link to={'/withdraw'}>
-          <Button bg={'#8054DE'}>Withdraw</Button>
+
+{
+  userType==="Investor" ?
+  <Button   onClick={() => handleSizeClick(size)}
+    m={2}
+      style={{ backgroundColor: "rgb(128, 84, 222)", color: "white" }}
+    >
+      Donate
+  </Button>:
+  <Link to={'/withdraw'}>
+          <Button bg={'#8054DE'}>{userType==="Investor"?"Donate":"Withdraw"}</Button>
         </Link>
+}
+        
       </Flex>
-      <Box w={'90%'} mt={8} ms={{ base: "24px", md: '90px' }} borderRadius='lg' borderColor={'#F8F8FA'}>
+      <Box w={'93%'} mt={8} ms={{ base: "24px", md: '50px' }} borderRadius='lg' borderColor={'#F8F8FA'}>
         <ImageSlider />
       </Box>
 
-      <Box p={{ base: "10px", md: '30px' }} ms={{ base: "5px", md: '42px' }}>
-        <Tabs variant='unstyled' size={{ base: 'sm', md: 'lg' }}>
+      <Box p={{ base: "10px", md: '30px' }} ms={{ base: "5px", md: '20px' }}>
+        <Tabs variant='unstyled' size={{ base: 'sm', md: 'sm' }}>
           <TabList mb={5}
             color={'gray'}
-            gap={{ base: 0, md: 9 }}
+            gap={{ base: 0, md: '5.2%' }}
             display="flex"
             justifyContent={{ base: 'space-between', md: 'flex-start' }}
             flexWrap={{ base: 'wrap', md: 'nowrap' }}>
@@ -199,6 +236,45 @@ export default function Details() {
           </TabPanels>
         </Tabs>
       </Box>
+
+      
+      <Modal onClose={onClose} size={size} isOpen={isOpen}>
+        <ModalOverlay />
+        <ModalContent>
+          <Center>
+            <ModalHeader>Donate</ModalHeader>
+          </Center>
+          <ModalCloseButton />
+          <ModalBody>
+            <Center>
+              <Stack spacing={4}>
+                <FormLabel fontSize={"20px"} mt={5}>
+                  Amount
+                </FormLabel>
+                <Input
+                  type="default"
+                  placeholder="0.0"
+                  bg={"white"}
+                  color={"black"}
+                  _placeholder={{ color: "black" }}
+                  h={14}
+                  textAlign="left"
+                />
+              </Stack>
+            </Center>
+            <Center>
+              <Link to="/DonateThanks">
+              <Button
+                style={{ backgroundColor: "rgb(128, 84, 222)", color: "white" }}
+                mt={"10px"}
+              >
+                Donate
+              </Button>
+              </Link>
+            </Center>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
       <Footer />
     </Box>
 

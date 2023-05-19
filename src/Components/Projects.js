@@ -12,7 +12,7 @@ import {
 
 export default function CrowdCard() {
   return (
- <Box w={{ base: '100%', md: '100%' }} overflow='hidden' p="20px" 
+ <Box w={{ base: '100%', md: '100%' }} overflow='hidden' p="20px" ms={[0,12]}
  marginTop={4}>
         
 <Flex gap={'10%'}  direction={["column", "row"]}>

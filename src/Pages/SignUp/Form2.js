@@ -2,7 +2,7 @@ import "./Form.css";
 import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Text, Image, HStack } from "@chakra-ui/react";
+import { Text, Image, HStack,Flex } from "@chakra-ui/react";
 
 export class Form2 extends Component {
   state = {
@@ -85,6 +85,8 @@ export class Form2 extends Component {
       });
     } else {
       this.continueFunc(e);
+        // Redirect the user to '/CreateProject'
+        window.location.href = "/CreateProject";
     }
   };
 
@@ -195,7 +197,7 @@ export class Form2 extends Component {
               ></input>
             </div>
 
-            <div className="buttons">
+            <Flex>
               <button onClick={this.back} className="goBack">
                 Go back
               </button>
@@ -203,7 +205,7 @@ export class Form2 extends Component {
                 Create an account{" "}
               </button>
               <ToastContainer />
-            </div>
+            </Flex>
           </div>
         </div>
         <div className="down--div">

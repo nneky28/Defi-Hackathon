@@ -7,7 +7,7 @@ import theme from './Utils/Theme';
 function App() {
   return (
     <ChakraProvider theme={theme}>
-    
+  
        <IndexRoutes/>
     
     </ChakraProvider>

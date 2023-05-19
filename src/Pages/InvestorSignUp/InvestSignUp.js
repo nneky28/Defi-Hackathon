@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { useContext,Component } from "react";
 import { Text, Image, HStack } from "@chakra-ui/react";
 import "../SignUp/Form.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { UserContext } from "../../Routes/UserContext";
 
 export class InvestSignUp extends Component {
   state = {
@@ -13,6 +14,7 @@ export class InvestSignUp extends Component {
     country: "",
     phone: "",
     data: [],
+    userType:'Investor'
   };
 
   getData = (e) => {
@@ -30,8 +32,10 @@ export class InvestSignUp extends Component {
       step: step + 1,
     });
   };
+  
 
   continueFunc = (e) => {
+    const { updateUserType } = useContext(UserContext); // Access updateUserType from UserContext
     e.preventDefault();
     const { fullName, email, password, walletAddress, country, phone } =
       this.state;
@@ -45,12 +49,16 @@ export class InvestSignUp extends Component {
     ) {
       toast.error("Please fill all required fields");
     } else {
+      const userType = 'Investor';
+      updateUserType(userType); 
       localStorage.setItem(
-        "user",
-        JSON.stringify([...this.state.data, this.state])
+        'user',
+        JSON.stringify({...this.state.data,})
       );
+  
       this.nextStep();
-      window.location.href = "/SignIn";
+      window.location.href = '/';
+      console.log('type',this.state)
     }
   };
 
@@ -93,7 +101,7 @@ export class InvestSignUp extends Component {
         position: "top-center",
       });
     } else {
-      this.continueFunc(e);
+      window.location.href = "/";
     }
   };
 

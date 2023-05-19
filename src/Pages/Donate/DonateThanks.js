@@ -13,11 +13,11 @@ export function DonateThanks() {
       color="white"
     >
       <NavBar />
-      <Box>
+      <Box mb={100}>
         <Center>
           <Heading>Thank you for supporting the community</Heading>
         </Center>
-        <Center mb={100}>
+        <Center  mt={4} mb={4}>
           <Link to="/">
             <Button bg="#8054DE" color={"white"}>
               Go Home

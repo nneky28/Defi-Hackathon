@@ -154,7 +154,7 @@
 
 .buttons {
     padding-top: 50px;
-    display: columns;
+    display: row;
     column-gap: 10px;
 }
 

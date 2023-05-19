@@ -52,7 +52,7 @@ export default function Withdraw({ name, role, desc, img }) {
 
             </Center>
             <Center>
-                <Button w={{ base:'78%',md:'38%' }} bg='#433478' mb={{ base:5,md:40 }} p={6}>Withdraw</Button>
+                <Button w={{ base:'78%',md:'34%' }} bg='#433478' mb={{ base:5,md:40 }} p={6}>Withdraw</Button>
             </Center>
             <Footer />
         </Box>

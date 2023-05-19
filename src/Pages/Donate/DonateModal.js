@@ -4,9 +4,9 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
+  ModalFooter,
   Button,
   Stack,
   Input,
@@ -29,7 +29,7 @@ export default function DonateModal() {
 
   return (
     <>
-      {sizes.map((size) => (
+      {/* {sizes.map((size) => (
         <Button
           onClick={() => handleSizeClick(size)}
           m={4}
@@ -37,7 +37,7 @@ export default function DonateModal() {
         >
           Donate
         </Button>
-      ))}
+      ))} */}
 
       <Modal onClose={onClose} size={size} isOpen={isOpen}>
         <ModalOverlay />

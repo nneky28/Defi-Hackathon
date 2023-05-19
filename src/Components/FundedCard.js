@@ -11,12 +11,12 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function FundedCard({ title, description, icon,  funds, ongoing, link = false,onClick = () => {}, }) {
+export default function FundedCard({ title, description, icon,  funds, ongoing, link = false,onClick = () => {}, selectedOption}) {
   const history = useNavigate();
+
   return (
     <Box w={{ base: '100%', md: '25%' }} bgColor={"#433478"} borderWidth='1px' borderRadius='lg' overflow='hidden' borderColor={'#F8F8FA'}
     >
-
       <Center>
         <Center color={"white"}>
           <Image src={`${icon}`}

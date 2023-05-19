@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useContext} from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import {
   Box,
@@ -25,18 +25,22 @@ import {
 import { RiSearch2Line, RiMenuLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { UserContext } from "../Routes/UserContext";
 
-export default function NavBar({home}) {
+
+export default function NavBar({home,selectedOption,setSelectedOption}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { isOpen:isModalOpen, onOpen:onModalOpen, onClose:onModalClose } = useDisclosure()
-
-  const [selectedOption ,setSelectedOption ]=useState('')
 
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
+  const { userType, updateUserType } = useContext(UserContext);
+  const handleOptionChange = (e) => {
+    updateUserType(e.target.value);
+  };
   return (
-    <Flex padding={"40px"} gap={5} display={["none", "flex"]}  w={'100%'}>
+    <Flex padding={"40px"} gap={2} display={["none", "flex"]}  w={'100%'}>
       <Link to="/">
         <HStack>
           <Image src="logo.png" alt="logo" boxSize={"38px"} />
@@ -50,12 +54,11 @@ export default function NavBar({home}) {
           </Text>
         </HStack>
       </Link>
-      <Link to="/CreateProject">
-        {" "}
-        <Text fontSize="15px" p={2}>
+      <ScrollLink to="discover" smooth={true} duration={500}>
+          <Text p={2} fontSize="15px" as="button" onClick={scrollToTop}>
           Discover
-        </Text>
-      </Link>
+          </Text>
+        </ScrollLink>
        <ScrollLink to="ongoing" smooth={true} duration={500}>
           <Text p={2} fontSize="15px" as="button" onClick={scrollToTop}>
             Explore
@@ -136,16 +139,16 @@ export default function NavBar({home}) {
                   borderColor="purple"
                   color='black'
                   bg='white'
-                  onChange={(e) => setSelectedOption(e.target.value)}>
-                  <option value='option1'>StartUp</option>
-                  <option value='option2'>Investor</option>
+                  onChange={handleOptionChange}>
+                  <option value='StartUp'>StartUp</option>
+                  <option value='Investor'>Investor</option>
                 </Select>
               </Box>
 
               <Center>
                 <Flex p={3} gap={10}>
                   <Text as='button' onClick={onModalClose} color='black'>Cancel</Text>
-                  {selectedOption === 'option1' ? (
+                  {userType === 'StartUp' ? (
                     <Link to="/SignUp">
                       <Button background="#8054DE" color="#ffff">Continue</Button>
                     </Link>
