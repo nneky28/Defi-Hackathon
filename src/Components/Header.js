@@ -4,15 +4,16 @@ import Button from './Button'
 
 export default function Header({ title, head }) {
 
-
+  //  
+  //  
   return (
-    <Box padding={'30px'} ms={{ base: '0px', md: '15px' }} >
+    <Box padding={'1px'} ms={{ base: '0px', md: '45px' }} >
       <Flex w={'100%'} direction={["column", "row"]}>
         <Box w={{ base: '100%', md: '40%' }}>
           <Heading mb={4} fontSize={"50px"} color='white'>Fund Your Tech <br /> Startups In Crypto
           </Heading>
-          <Text fontSize={"20px"} color='white'>Find Backers who will bring your dream ideas into life.<br />
-            Pitch, sell yourself, put your forward.  </Text>
+          <Text fontSize={"20px"} color='white'>Find Investors who will bring your dream ideas into life.<br />
+          Pitch, sell yourself, and put yourself forward.  </Text>
           <Flex gap={5} display={["none", "flex"]} mt={8}>
             <Button bg="#8054DE" color={"white"} >Launch project</Button>
             <Button background="transparent" variant='outline' color={"white"} >Explore more</Button>

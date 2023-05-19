@@ -95,7 +95,7 @@ export class Form1 extends Component {
           <div className="Form">
             <h2 className="Form--heading">CREATE YOUR ACCOUNT</h2>
             <div className="arrow">
-              <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
+            <Image src="line.png" alt="line" w={{ base: "30%", md: "10%" }} />
             </div>
             <h3
               style={{
