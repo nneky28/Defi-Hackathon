@@ -16,10 +16,34 @@ import {
   Center,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useContractWrite, usePrepareContractWrite } from "wagmi";
+import { token } from "../../Components/Contract";
 
 export default function DonateModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [size, setSize] = React.useState("md");
+
+  const { config } = usePrepareContractWrite({
+    address: token.address,
+    abi: token.abi,
+    functionName: "createCampaign",
+    args: [_title, _description],
+  });
+
+  const [_title, setTitle] = useState("");
+  const [_description, setDescription] = useState("");
+
+  const {
+    data: writeData,
+    isLoading: writeLoading,
+    isSuccess,
+    write,
+  } = useContractWrite(config);
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    write?.();
+  };
 
   const handleSizeClick = (newSize) => {
     setSize(newSize);

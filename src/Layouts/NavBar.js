@@ -1,4 +1,5 @@
 import React from "react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import {
   Box,
   Flex,
@@ -84,9 +85,7 @@ export default function NavBar({ home }) {
                 <RiSearch2Line />
               </Box>
             )}
-            <Link to="/reg">
-              <Button background="#8054DE">Connect Wallet</Button>
-            </Link>
+            <ConnectButton className="wallet" chainStatus="name" />
             {home && (
               <Box fontSize={"30px"} pos="relative" top="4px">
                 <RiMenuLine />
