@@ -30,8 +30,7 @@ export default function DonateModal() {
     args: [_title, _description],
   });
 
-  const [_title, setTitle] = useState("");
-  const [_description, setDescription] = useState("");
+  const [_id, setId] = useState("");
 
   const {
     data: writeData,
@@ -43,6 +42,8 @@ export default function DonateModal() {
   const handleChange = (e) => {
     e.preventDefault();
     write?.();
+    setId("");
+    window.location.href = "/";
   };
 
   const handleSizeClick = (newSize) => {
@@ -79,6 +80,9 @@ export default function DonateModal() {
                 </FormLabel>
                 <Input
                   type="default"
+                  id="_id"
+                  onChange={(e) => setTarget(e.target.value)}
+                  value={_id}
                   placeholder="Enter your contribution"
                   bg={"white"}
                   color={"black"}
@@ -101,8 +105,10 @@ export default function DonateModal() {
               <Button
                 style={{ backgroundColor: "rgb(128, 84, 222)", color: "white" }}
                 mt={"10px"}
+                onClick={handleChange}
+                type="submit"
               >
-                Donate
+                {writeLoading ? "Donating" : "Donate"}
               </Button>
             </Center>
           </ModalBody>
