@@ -6,6 +6,7 @@ import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import InvestSignUp from "../Pages/InvestorSignUp/InvestSignUp";
 import Details from "../Pages/Details";
+import DonateModal from "../Pages/Donate/DonateModal";
 
 export default function IndexRoutes() {
   return (
@@ -17,6 +18,7 @@ export default function IndexRoutes() {
         <Route path="/InvestSignUp" element={<InvestSignUp />} />
         <Route path="/Project" element={<Project />} />
         <Route path="/details" element={<Details />} />
+        <Route path="/DonateModal" element={<DonateModal />} />
       </Routes>
     </BrowserRouter>
   );

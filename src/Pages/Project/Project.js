@@ -19,6 +19,8 @@ import Footer from "../../Layouts/Footer";
 import { useContractWrite, usePrepareContractWrite } from "wagmi";
 import { token } from "../../Components/Contract";
 import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function Project({ name, role, desc, img }) {
   const [_title, setTitle] = useState("");
@@ -42,9 +44,16 @@ export function Project({ name, role, desc, img }) {
   const {
     data: writeData,
     isLoading: writeLoading,
-    isSuccess,
     write,
-  } = useContractWrite(config);
+  } = useContractWrite({
+    ...config,
+    onSuccess() {
+      toast.success("Success", {
+        position: "top-right",
+      });
+      window.location.href = "/";
+    },
+  });
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -53,8 +62,6 @@ export function Project({ name, role, desc, img }) {
     setDescription("");
     setTarget("");
     setDeadline("");
-    // Redirect to a new page after form submission
-    window.location.href = "/"; // Replace "/new-page" with the actual path of the new page
   };
 
   return (
@@ -178,6 +185,7 @@ export function Project({ name, role, desc, img }) {
           >
             {writeLoading ? "Submiting" : "Create a Project"}
           </Button>
+          <ToastContainer />
         </Center>
         <Footer />
       </Box>

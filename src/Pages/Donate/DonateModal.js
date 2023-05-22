@@ -1,19 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   Button,
   Stack,
   Select,
   Input,
-  FormControl,
-  FormLabel,
   Center,
+  FormLabel,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useContractWrite, usePrepareContractWrite } from "wagmi";
@@ -23,27 +21,32 @@ export default function DonateModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [size, setSize] = React.useState("md");
 
+  const [_id, setId] = useState("");
+
   const { config } = usePrepareContractWrite({
     address: token.address,
     abi: token.abi,
-    functionName: "createCampaign",
-    args: [_title, _description],
+    functionName: "donateToCampaign",
+    args: [!isNaN(parseInt(_id)) ? parseInt(_id) : 0],
+    gasLimit: 50000,
   });
-
-  const [_id, setId] = useState("");
 
   const {
     data: writeData,
     isLoading: writeLoading,
-    isSuccess,
     write,
-  } = useContractWrite(config);
+  } = useContractWrite({
+    ...config,
+    onSuccess(data) {
+      alert("Success", data);
+      window.location.href = "/";
+    },
+  });
 
   const handleChange = (e) => {
     e.preventDefault();
     write?.();
     setId("");
-    window.location.href = "/";
   };
 
   const handleSizeClick = (newSize) => {
@@ -81,7 +84,7 @@ export default function DonateModal() {
                 <Input
                   type="default"
                   id="_id"
-                  onChange={(e) => setTarget(e.target.value)}
+                  onChange={(e) => setId(e.target.value)}
                   value={_id}
                   placeholder="Enter your contribution"
                   bg={"white"}
